@@ -16,10 +16,10 @@ createRoot(document.getElementById('root')).render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="category" element={<Category />} />
-        <Route path="/details" element={<Details />} />
-        <Route path="/review" element={<Review />} />
-        <Route path="/fullpaymentsform" element={<FullPaymentsForm />} />
-        <Route path="/userprofile" element={<UserProfile />} />
+        <Route path="details" element={<Details />} />
+        <Route path="review" element={<Review />} />
+        <Route path="fullpaymentsform" element={<FullPaymentsForm />} />
+        <Route path="userprofile" element={<UserProfile />} />
       </Routes>
     </HashRouter>
   </StrictMode>
