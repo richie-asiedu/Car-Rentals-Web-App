@@ -342,11 +342,6 @@ body {
   }
 }
 
-@media (max-width: 760px) {
-  body {
-    padding-top: 5px !important;
-  }
-}
 
 body.dark-mode .navbar-wrapper {
   background-color: #1a202c;
