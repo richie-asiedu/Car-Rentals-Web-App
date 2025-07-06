@@ -1,0 +1,149 @@
+.footer-container {
+    background-color: #ffffff;
+    padding: 60px 50px;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+}
+
+.footer-links-wrapper {
+    display: flex;
+    gap: 80px;
+}
+
+.footer-section {
+    min-width: 150px;
+}
+
+.footer-section.about {
+    flex-basis: 25%;
+    margin-right: 20px;
+}
+
+.footer-logo {
+    font-size: 32px;
+    font-weight: 700;
+    color: #3563E9;
+    letter-spacing: -3%;
+    line-height: 150%;
+    margin-bottom: 16px;
+}
+
+.footer-section.about p {
+    color: #596780;
+    width: 90%;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: -2%;
+}
+
+.footer-section h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 28px;
+    letter-spacing: -2%;
+    line-height: 150%;
+    color: #1A202C;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 20px;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: #596780;
+    font-weight: 500;
+    letter-spacing: -2%;
+    line-height: 150%;
+}
+.footer-section ul li a:hover{
+    color: #174ae2;
+}
+
+.footer-bottom {
+    padding-top: 40px;
+    border-top: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-bottom p {
+    font-weight: 600;
+    color: #1A202C;
+    line-height: 150%;
+    letter-spacing: -2%;
+    font-size: 16px;
+}
+
+.footer-legal {
+    display: flex;
+    gap: 60px;
+}
+
+.footer-legal a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #1A202C;
+} 
+
+
+@media (max-width: 768px) {
+    .footer-container {
+        background-color: #ffffff;
+        padding: 60px 60px;
+        width: 85%;
+        margin: auto;
+    }
+    .footer-links-wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 10%;
+        gap: 10px;
+    }
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px;
+    }
+    .footer-legal {
+        order: 1;
+        width: 100%;
+        justify-content: flex-start;
+        margin-bottom: 0;
+        gap: 80px;
+    }
+    .footer-bottom p {
+        order: 2;
+        align-self: flex-start;
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 408px) {
+    .footer-container {
+        background-color: #ffffff;
+        padding: 60px 50px;
+        width: 90%;
+        margin: auto;
+    }
+    .footer-links-wrapper {
+        gap: 1px;
+        font-size: 12px;
+    }
+    .footer-links-wrapper h3{
+        gap: 4px;
+        font-size: 16px;
+    }
+}

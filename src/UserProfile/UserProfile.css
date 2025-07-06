@@ -1,0 +1,1571 @@
+.user-profile-container {
+  display: flex;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body.dark-mode .user-profile-container {
+  background-color: #1a202c;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #ffffff;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed;
+  top: 124px;
+  left: 0;
+  height: calc(100vh - 124px);
+  z-index: 799;
+  padding-top: 1rem;
+  transition: none;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #bfc9d9 #f5f5f5;
+}
+
+body.dark-mode .sidebar{
+    background-color: #1a202c;
+}
+
+.main-menu, .preferences, .logout {
+  margin-bottom: 2rem;
+}
+
+.main-menu h2, .preferences h2 {
+  color: #94a7cb;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: -2%;
+  line-height: 100%;
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 16px;
+  line-height: 150%;
+  font-weight: 500;
+  letter-spacing: -2%;
+  color: #90a3bf;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar li img {
+  width: 20px;
+  height: 20px;
+  margin-right: 1rem;
+}
+
+.sidebar li:hover {
+  background-color: #e0e7ff;
+  color: #3563e9;
+}
+
+.sidebar li.active {
+  background-color: #3563e9;
+  color: #ffffff;
+}
+
+.sidebar li.active img {
+  filter: brightness(0) invert(1);
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 110px; 
+  height: 30px;
+  margin-left: auto;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-switch label {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 30px; 
+  background-image: none;
+  background-size: initial;
+  background-position: initial;
+  background-repeat: no-repeat;
+}
+
+.toggle-switch input:checked + label {
+  background-color: #3563e9;
+}
+
+.toggle-switch label:before {
+  position: absolute;
+  content: "";
+  height: 26px; 
+  width: 26px; 
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + label:before {
+  transform: translateX(40px);
+}
+
+.main-content-wrapper {
+  flex-grow: 1;
+  margin-left: 250px; 
+  padding: 2rem;
+  margin-top: 5px; 
+  height: fit-content;
+  justify-content: center; 
+}
+
+.main-content {
+  display: flex;
+  gap: 2rem;
+  max-width: 1400px; 
+  margin: 0 auto; 
+}
+
+.details-rental-card {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  flex: 2;
+}
+
+.details-rental-card h2 {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 150%;
+  letter-spacing: -3%;
+  margin-bottom: 1rem;
+  color: #1a202c;
+}
+
+.map-placeholder img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.car-infos {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 3rem;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.car-img {
+  flex-shrink: 0;
+}
+
+.car-img img {
+  width: 132px;
+  height: 72px;
+  object-fit: contain;
+  border-radius: 8px;
+  background-color: #3563e9;
+}
+
+.car-detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  width: 50%;
+  margin-left: 20px;
+}
+
+.car-detail h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a202c;
+  margin: 0 0.8rem 0.8rem 0;
+  line-height: 150%;
+  letter-spacing: -3%;
+}
+
+.car-detail p {
+  font-size: 14px;
+  color: #3d5278;
+  margin: 0;
+  font-weight: 500;
+  line-height: 150%;
+}
+
+.car-id {
+  margin-left: auto;
+  color: #90a3bf;
+  font-size: 1.1rem;
+  font-weight: 600;
+  white-space: nowrap;
+  align-self: flex-start;
+}
+
+.rental-points {
+  margin-bottom: 1.5rem;
+}
+.rental-points .booking-section .radio-group .radio-label {
+  color: #1a202c;
+}
+
+.pickup-dropoff {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+
+.point {
+  display: flex;
+  align-items: flex-start;
+}
+
+.point-details {
+  flex-grow: 1;
+}
+
+.point-label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #1a202c;
+}
+
+.point-selection {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.point-selection p {
+  flex-grow: 1;
+  margin: 0;
+  color: #4a5568;
+}
+
+.point-selection select {
+  border: none;
+  background: none;
+  outline: none;
+  font-size: 1rem;
+  color: #1a202c;
+  cursor: pointer;
+  appearance: none;
+  padding-right: 1.5rem; 
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23000000%22%20d%3D%22M287%20197.3l-130.3-130.3c-4.5-4.5-11.7-4.5-16.2%200L5.4%20197.3c-4.5%204.5-4.5%2011.7%200%2016.2l16.2%2016.2c4.5%204.5%2011.7%204.5%2016.2%200l94.8-94.8%2094.8%2094.8c4.5%204.5%2011.7%204.5%2016.2%200l16.2-16.2c4.5-4.5%204.5-11.7%200-16.2z%22%2F%3E%3C%2Fsvg%3E');
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  background-size: 0.6em auto;
+}
+
+.total-rentals-price {
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+.price-label h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a202c;
+  line-height: 150%;
+  letter-spacing: -3%;
+  margin: 0;
+}
+
+.price-label p {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 150%;
+  letter-spacing: -2%;
+  color: #90a3bf;
+  margin: 0;
+}
+
+.price-value span {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 0%;
+  line-height: 100%;
+  color: #1a202c;
+  margin: 0;
+}
+
+.right-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.top-car-rental-card {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.recent-transaction-card {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  height: 510px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.top-car-rental-card h2, .recent-transaction-card h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #1a202c;
+}
+
+.donut-chart-flex {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 32px;
+}
+
+.donut-chart-container {
+  width: 220px;
+  height: 220px;
+  min-width: 180px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.car-categories {
+  min-width: 180px;
+}
+
+.donut-chart-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.chart-info {
+  position: absolute;
+  text-align: center;
+}
+
+.chart-info .total-rental-count {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a202c;
+  line-height: 150%;
+  letter-spacing: -3%;
+  margin: 0;
+}
+
+.chart-info .rental-car-label {
+  font-size: 14px;
+  color: #90a3bf;
+  font-weight: 500;
+  letter-spacing: -2%;
+  line-height: 150%;
+  margin: 0;
+}
+
+.car-categories ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.car-categories li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  color: #90a3bf;
+}
+
+.car-categories li span:first-child {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  display: inline-block;
+}
+
+.color-dot.sport-car {
+  background-color: #0d3559;
+}
+.color-dot.suv {
+  background-color: #175D9C;
+}
+.color-dot.coupe {
+  background-color: #2185DE;
+}
+.color-dot.hatchback {
+  background-color: #63A9E8;
+}
+.color-dot.mpv {
+  background-color: #A6CEF2;
+}
+
+.car-categories li span.category-name {
+  color: #90a3bf;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 150%;
+  letter-spacing: -2%;
+}
+.car-categories li span.category-number {
+  color: #1a202c;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 150%;
+  letter-spacing: -2%;
+}
+
+.recent-transaction-card .card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.recent-transaction-card .card-header a {
+  color: #3563e9;
+  text-decoration: none;
+  font-size: 12px;
+  line-height: 200%;
+  font-weight: 500;
+}
+
+.transaction-list {
+  display: flex;
+  flex-direction: column;
+  gap: 60px; 
+}
+
+.transaction-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e0e0e0;
+}
+.transaction-item:last-child {
+  border-bottom: none;
+}
+
+.item-details {
+  display: flex;
+  align-items: center;
+}
+
+.item-details img {
+  width: 110px;
+  height: 55px;
+  object-fit: contain;
+  border-radius: 4px;
+  margin-right: 0.75rem;
+}
+
+.item-text h3 {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 150%;
+  margin: 0;
+  color: #1a202c;
+}
+
+.item-text p {
+  font-size: 12px;
+  color: #90a3bf;
+  font-weight: 500;
+  margin: 0;
+}
+
+.item-price-date {
+  text-align: right;
+}
+
+.item-price-date .date {
+  font-size: 12px;
+  color: #90a3bf;
+  font-weight: 500;
+  margin: 0;
+}
+
+.item-price-date .price {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a202c;
+  margin: 0;
+}
+
+
+@media (max-width: 1400px) {
+  .main-content-wrapper {
+    max-width: 100vw;
+    margin-left: 250px;
+    padding: 1.5rem;
+  }
+  .main-content {
+    max-width: 100vw;
+    gap: 1.2rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .main-content-wrapper {
+    margin-left: 0;
+    padding: 1rem;
+  }
+  .main-content {
+    flex-direction: column;
+    gap: 1.2rem;
+    max-width: 100vw;
+  }
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    z-index: 2000;
+  }
+}
+
+@media (max-width: 768px) {
+  .user-profile-container {
+    flex-direction: column;
+    margin-top: auto;
+  }
+
+  .sidebar {
+    position: fixed;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    top: 0;
+    padding-top: 5rem; 
+    width: 100%; 
+    left: -100%;
+    z-index: 2000; 
+    height: 100vh;
+  }
+
+  .sidebar.open {
+    left: 0; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding-top: 4rem; 
+  }
+
+  .hamburger-menu {
+    display: flex; 
+    z-index: 2050; 
+  }
+  body.dark-mode .hamburger-menu{
+    background-color: #3563e9;
+  }
+
+  .main-menu, .preferences, .logout {
+    margin-bottom: 1rem;
+  }
+
+  .sidebar ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .sidebar li {
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 0;
+    flex-direction: column;
+    text-align: center;
+    font-size: 16px;
+    line-height: 150%;
+    font-weight: 500;
+    letter-spacing: -2%;
+    color: #90a3bf;
+  }
+
+  .sidebar li img {
+    margin-right: 0;
+    margin-bottom: 0.25rem;
+  }
+
+  .main-content-wrapper {
+    margin-left: 0;
+    width: 100%; 
+    margin-top: 0; 
+    padding: 1rem;
+  }
+
+  .toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 70px;
+    height: 30px; 
+    margin-left: auto;
+  }
+
+  .details-rental-card, .top-car-rental-card, .recent-transaction-card {
+    padding: 1rem;
+  }
+
+  .details-rental-card h2, .top-car-rental-card h2, .recent-transaction-card h2 {
+    font-size: 1.2rem;
+  }
+
+  .car-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .car-img img {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+    width: 130px;
+    height: 70px;
+  }
+
+  .car-detail h3 {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 140%;
+    letter-spacing: 0%;
+    color: #1a202c;
+  }
+
+  .car-detail p {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: -2%;
+    color: #3d5278;
+  }
+
+  .car-id {
+    margin-left: 0;
+    padding-top: 35px;
+  }
+
+  .point-selection {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .point-selection select {
+    width: 100%;
+  }
+
+  .total-rental-price {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .price-value h3 {
+    margin-top: 0.5rem;
+  }
+
+  .recent-transaction-card {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    height: fit-content;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  }
+
+  .donut-chart-container {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .chart-info .total-rental-count {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #1a202c;
+    margin: 0;
+  }
+  
+  .chart-info .rental-car-label {
+    font-size: 0.5rem;
+    color: #a0a0a0;
+    margin: 0;
+  }
+
+  .item-details {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .item-details img {
+    margin-right: 0;
+    margin-bottom: 0.25rem;
+  }
+
+  .sidebar-overlay {
+    display: block; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+  }
+}
+
+@media (max-width: 400px) {
+  .main-content-wrapper,
+  .main-content,
+  .top-car-rental-card,
+  .details-rental-card,
+  .recent-transaction-card {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+  .main-content-wrapper {
+    padding-top: 40px !important;
+    margin-top: 30px !important;
+  }
+  body, .user-profile-container {
+    margin-top: 30px !important;
+    padding-top: 30px !important;
+  }
+}
+
+.hamburger-menu {
+  display: none; 
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+  position: fixed;
+  top: 1.5rem;
+  left: 1.5rem;
+  z-index: 9999;
+}
+
+.hamburger-menu .bar {
+  width: 100%;
+  height: 3px;
+  background-color: #333;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.hamburger-menu.open .bar:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger-menu.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-menu.open .bar:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.sidebar-overlay {
+  display: none; 
+}
+
+
+body.dark-mode {
+  background-color: #1a202c;
+  color: #e2e8f0;
+}
+
+body.dark-mode .sidebar {
+  background-color: #2d3748;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .sidebar li {
+  color: #e2e8f0;
+}
+
+body.dark-mode .sidebar li:hover {
+  background-color: #4a5568;
+  color: #e2e8f0;
+}
+
+body.dark-mode .sidebar li.active {
+  background-color: #3563e9;
+  color: #ffffff;
+}
+
+body.dark-mode .main-menu h2,
+body.dark-mode .preferences h2 {
+  color: #a0aec0;
+}
+
+body.dark-mode .hamburger-menu .bar {
+  background-color: #e2e8f0;
+}
+
+body.dark-mode .details-rental-card,
+body.dark-mode .top-car-rental-card,
+body.dark-mode .recent-transaction-card {
+  background-color: #2d3748;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .details-rental-card h2,
+body.dark-mode .top-car-rental-card h2,
+body.dark-mode .recent-transaction-card h2 {
+  color: #e2e8f0;
+}
+
+body.dark-mode .car-detail h3,
+body.dark-mode .radio-label,
+body.dark-mode .card-header h3,
+body.dark-mode .price-value span,
+body.dark-mode .chart-info .total-rental-count,
+body.dark-mode .item-text h3,
+body.dark-mode .item-price-date .price {
+  color: #e2e8f0;
+}
+
+body.dark-mode .car-detail p,
+body.dark-mode .car-id,
+body.dark-mode .point-label,
+body.dark-mode .point-selection p,
+body.dark-mode .price-label h3,
+body.dark-mode .price-label p,
+body.dark-mode .chart-info .rental-car-label,
+body.dark-mode .car-categories li,
+body.dark-mode .item-text p,
+body.dark-mode .item-price-date .date {
+  color: #e2e8f0;
+}
+
+body.dark-mode .point-selection input {
+  color: #e2e8f0;
+  background-color: #2d3748;
+  border-color: #4a5568;
+}
+
+body.dark-mode .toggle-switch label {
+  background-color: #4a5568;
+}
+
+body.dark-mode .toggle-switch input:checked + label {
+  background-color: #3563e9;
+}
+
+body.dark-mode .recent-transaction-card .card-header a {
+  color: #63b3ed;
+}
+
+body.dark-mode .donut-chart-center-circle {
+  fill: #2d3748; 
+}
+body.dark-mode .booking-section .booking-cards h3 {
+  color: #e2e8f0; 
+}
+body.dark-mode .rental-points .booking-section .radio-group .radio-label {
+  color: #e2e8f0;
+}
+body.dark-mode .top-car-rental-card .top-car-rental-header .top-car-rental-dots {
+  background: #e2e8f0; 
+  border-radius: 100px;
+}
+body.dark-mode .car-categories .category-number,
+.main-content-wrapper .rental-points .radio-group span {
+  color: #e2e8f0; 
+}
+
+.profile-hamburger-button {
+  display: none; 
+  position: fixed;
+  top: 1rem;
+  left: 1.2rem;
+  z-index: 1200;
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.profile-hamburger-button svg {
+  width: 24px;
+  height: 24px;
+}
+
+body.dark-mode .profile-hamburger-button {
+    background: #ffff;
+    color: #fff;
+    border-color: #4A5568;
+}
+
+@media (max-width: 768px) {
+  .profile-hamburger-button {
+    display: flex;
+  }
+}
+
+@media (max-width: 700px) {
+  .details-rental-card {
+    width: 95vw;
+    max-width: 400px;
+    margin: 0 auto;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    padding: 1.2rem 0.8rem 1.5rem 0.8rem;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .top-car-rental-card {
+    width: 95vw;
+    max-width: 400px;
+    margin: auto;
+  }
+
+  .recent-transaction-card {
+    width: 95vw;
+    max-width: 400px;
+    margin: auto;
+  }
+
+  .total-rental-price {
+    width: 100%;
+    margin-top: 4rem;
+    padding-top: 1.2rem;
+    margin-bottom: 3rem;
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  .price-label {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 3rem;
+  }
+  .price-value {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .car-info {
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    width: 100%;
+    margin-top: 2rem;
+  }
+  .car-image {
+    align-self: auto;
+    margin-bottom: 0;
+  }
+  .car-details {
+    width: 100%;
+    margin-left: 0;
+    text-align: left;
+  }
+  .car-id {
+    margin-left: auto;
+    margin-top: 0;
+    align-self: flex-start;
+  }
+
+  .price-label h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1a202c;
+    line-height: 150%;
+    letter-spacing: -3%;
+    margin: 0;
+  }
+  
+  .price-label p {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: -2%;
+    color: #90a3bf;
+    margin: 0;
+  }
+  
+  .price-value span {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0%;
+    line-height: 100%;
+    color: #1a202c;
+    margin: 0;
+  }
+  .car-details h3 {
+    font-size: 1.5rem;
+  }
+  .car-details p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .donut-chart-flex {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .donut-chart-container {
+    width: 220px;
+    height: 220px;
+    min-width: 0;
+    margin: 0 auto 2rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .chart-info {
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .car-categories {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+  }
+  .car-categories ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 0;
+    margin: 0;
+  }
+  .car-categories li {
+    width: 90%;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    color: #90a3bf;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+  }
+  .car-categories li span:last-child {
+    color: #232631;
+    font-weight: 700;
+    font-size: 1.2rem;
+  }
+  .car-categories li span.category-name {
+    color: #90a3bf;
+    font-weight: 600;
+    font-size: 1.2rem;
+  }
+  .car-categories li span.category-number {
+    color: #232631;
+    font-weight: 700;
+    font-size: 1.2rem;
+  }
+}
+
+.top-car-rental-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: nowrap;
+}
+
+.top-car-rental-header h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a202c;
+  margin: 0;
+  letter-spacing: -3%;
+  line-height: 150%;
+}
+
+.top-car-rental-dots {
+  height: 24px;
+  width: 24px;
+  color: #1a202c;
+  object-fit: contain;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 0.5rem;
+  margin-bottom: 0;
+}
+
+@keyframes cardFadeIn {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes donutSegmentFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes transactionFadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.top-car-rental-card,
+.details-rental-card,
+.recent-transaction-card {
+  animation: cardFadeIn 0.8s cubic-bezier(.4,2,.6,1) both;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.top-car-rental-card:hover,
+.details-rental-card:hover,
+.recent-transaction-card:hover {
+  box-shadow: 0 8px 24px rgba(53,99,233,0.10);
+  transform: translateY(-4px) scale(1.02);
+}
+
+.top-car-rental-dots:hover {
+  transform: scale(1.2);
+  filter: brightness(1.7);
+  transition: transform 0.2s, filter 0.2s;
+}
+
+.transaction-item {
+  opacity: 0;
+  animation: transactionFadeIn 0.7s cubic-bezier(.4,2,.6,1) forwards;
+}
+.transaction-item:nth-child(1) { animation-delay: 0.2s; }
+.transaction-item:nth-child(2) { animation-delay: 0.35s; }
+.transaction-item:nth-child(3) { animation-delay: 0.5s; }
+.transaction-item:nth-child(4) { animation-delay: 0.65s; }
+
+
+.top-car-rental-header h2 {
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+}
+.top-car-rental-card, .details-rental-card, .recent-transaction-card {
+  padding: clamp(1rem, 3vw, 2rem);
+}
+
+@media (max-width: 600px) {
+  .main-content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .top-car-rental-card, .details-rental-card, .recent-transaction-card {
+    padding: 1rem;
+    border-radius: 8px;
+  }
+  .donut-chart-container {
+    width: 120px;
+    height: 120px;
+  }
+  .car-categories li span.category-name,
+  .car-categories li span.category-number {
+    font-size: 13px;
+  }
+  .transaction-list {
+    gap: 30px;
+  }
+}
+
+
+.sidebar.open {
+  left: 0;
+}
+
+.sidebar-overlay {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 80vw;
+    max-width: 320px;
+    height: 100vh;
+    background: #fff;
+    z-index: 2000;
+    transition: left 0.3s cubic-bezier(.4,2,.6,1);
+    box-shadow: 2px 0 16px rgba(0,0,0,0.08);
+    overflow-y: auto;
+    padding-top: 4rem;
+  }
+  .sidebar.open {
+    left: 0;
+  }
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 8px;
+  background: #f5f5f5;
+}
+.sidebar::-webkit-scrollbar-thumb {
+  background: #bfc9d9;
+  border-radius: 6px;
+}
+@media (min-width: 900px) and (max-width: 1100px) {
+  .main-content-wrapper,
+  .main-content {
+    max-width: 70vw;
+    padding: 0.1rem;
+    margin-right: -35%;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+  }
+  .details-rental-card,
+  .top-car-rental-card,
+  .recent-transaction-card {
+    max-width: 60vw;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+    border-radius: 10px;
+  }
+  .sidebar {
+    width: 190px;
+    padding: 1rem 0.5rem;
+    margin-top: 13.3%;
+  }
+  .donut-chart-flex {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+  }
+  
+  .donut-chart-container {
+    width: 90px;
+    height: 215px;
+    min-width: 90px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .chart-info .total-rental-count {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1a202c;
+    line-height: 150%;
+    letter-spacing: -3%;
+    margin: 0;
+  }
+  
+  .chart-info .rental-car-label {
+    font-size: 10px;
+    color: #90a3bf;
+    font-weight: 500;
+    letter-spacing: -2%;
+    line-height: 150%;
+    margin: 0;
+  }
+}
+
+@media (min-width: 1006px) and (max-width: 1198px) {
+  .main-content-wrapper,
+  .main-content {
+    max-width: 70vw;
+    padding: 1.1rem;
+    margin-right: -40%;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+  }
+  .details-rental-card,
+  .top-car-rental-card,
+  .recent-transaction-card {
+    max-width: 60vw;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+    border-radius: 10px;
+  }
+  .sidebar {
+    width: 200px;
+    padding: 1rem 0.5rem;
+    margin-top: 11%;
+  }
+  .donut-chart-flex {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+  }
+  
+  .donut-chart-container {
+    width: 150px;
+    height: 210px;
+    min-width: 150px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media (min-width: 1202px) and (max-width: 1024px) {
+  .main-content-wrapper,
+  .main-content {
+    max-width: 70vw;
+    padding: 1.1rem;
+    margin-right: -40%;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+  }
+  .details-rental-card,
+  .top-car-rental-card,
+  .recent-transaction-card {
+    max-width: 60vw;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+    border-radius: 10px;
+  }
+  .sidebar {
+    width: 200px;
+    padding: 1rem 0.5rem;
+    margin-top: 12%;
+  }
+  .donut-chart-flex {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+  }
+  
+  .donut-chart-container {
+    width: 150px;
+    height: 210px;
+    min-width: 150px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1280px) {
+  .main-content-wrapper,
+  .main-content {
+    max-width: 80vw;
+    padding: 0.5rem;
+    margin-right: -0.3%;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+  }
+  .details-rental-card,
+  .top-car-rental-card,
+  .recent-transaction-card {
+    max-width: 85vw;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 10px;
+  }
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    top: 124px;
+    left: 0;
+    height: calc(100vh - 124px);
+    z-index: 799;
+    padding-top: 1rem;
+    transition: none;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #bfc9d9 #f5f5f5;
+    width: 250px;
+    padding: 1rem 0.5rem;
+    margin: auto;
+  }
+  .donut-chart-flex {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 32px;
+  }
+  
+  .donut-chart-container {
+    width: 200px;
+    height: 215px;
+    min-width: 150px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media (min-width: 1242px) {
+  .main-content-wrapper,
+  .main-content {
+    max-width: 90vw;
+    padding: 0.2rem;
+    margin-right: 0.2%;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+  }
+  .details-rental-card,
+  .top-car-rental-card,
+  .recent-transaction-card {
+    max-width: 85vw;
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 10px;
+  }
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    top: 124px;
+    left: 0;
+    height: calc(100vh - 124px);
+    z-index: 799;
+    padding-top: 1rem;
+    transition: none;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #bfc9d9 #f5f5f5;
+    width: 250px;
+    padding: 1rem 0.5rem;
+    margin: auto;
+  }
+  .donut-chart-flex {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 32px;
+  }
+  
+  .donut-chart-container {
+    width: 200px;
+    height: 225px;
+    min-width: 150px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1230px) and (max-width: 1236px) {
+  .main-content-wrapper,
+  .main-content {
+    max-width: 90vw;
+    padding: 0.2rem;
+    margin-right: 0.2%;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+  }
+  .details-rental-card,
+  .top-car-rental-card,
+  .recent-transaction-card {
+    max-width: 85vw;
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 10px;
+  }
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    top: 124px;
+    left: 0;
+    height: calc(100vh - 124px);
+    z-index: 799;
+    padding-top: 1rem;
+    transition: none;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #bfc9d9 #f5f5f5;
+    width: 250px;
+    padding: 1rem 0.5rem;
+    margin: auto;
+  }
+  .donut-chart-flex {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 32px;
+  }
+  
+  .donut-chart-container {
+    width: 200px;
+    height: 225px;
+    min-width: 150px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

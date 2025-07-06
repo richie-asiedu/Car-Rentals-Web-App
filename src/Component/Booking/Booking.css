@@ -1,0 +1,297 @@
+.booking-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  margin-top: auto;
+  position: relative;
+  z-index: 10;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.booking-container {
+  flex: 1;
+  background-color: #ffffff;
+  border-radius: 10px;
+  width: 582px;
+  height: 136px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.booking-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.radio-group {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  padding: 0.4rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.radio-option input[type="radio"] {
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #3563e9;
+  border-radius: 50%;
+  margin: 0;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.radio-option input[type="radio"]:checked {
+  background-color: #3563e9;
+}
+
+.radio-option input[type="radio"]:checked::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.radio-option input[type="radio"]:hover {
+  border-color: #2563eb;
+}
+
+.radio-option:hover {
+  background-color: #f8fafc;
+}
+
+.radio-label {
+  font-size: 16px;
+  color: #1a202c;
+  font-weight: 600;
+  letter-spacing: -2%;
+  line-height: 150%;
+}
+
+.booking-cards {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.booking-card {
+  flex: 1;
+  background: transparent;
+  padding: 0.75rem;
+  border-radius: 6px;
+  min-width: 120px;
+}
+
+.booking-card:not(:last-child) {
+  border-right: 1px solid #c3d4e9;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-header h3 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: -2%;
+  line-height: 150%;
+  color: #1a202c;
+}
+
+.card-content select,
+.card-content input {
+  width: 100%;
+  padding: 0.4rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: -2%;
+  line-height: 100%;
+  color: #90a3bf;
+  outline: none;
+  background: white;
+}
+
+.card-content input[type="date"],
+.card-content input[type="time"] {
+  cursor: pointer;
+}
+
+.switch-button {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: center;
+  margin-top: 2.5rem;
+  flex-shrink: 0;
+}
+
+.switch-button:hover {
+  background: #2563eb;
+}
+
+body.dark-mode .radio-group .radio-label {
+  color: #1a202c;
+}
+body.dark-mode .booking-cards .card-header h3 {
+  color: #1a202c;
+}
+
+@media (max-width: 1024px) {
+  .booking-wrapper {
+    flex-direction: column;
+    margin-top: 0;
+    align-items: stretch;
+  }
+  .booking-container {
+    margin: auto;
+    width: 90vw;
+  }
+  .switch-button {
+    transform: rotate(90deg);
+    margin: 0.75rem auto;
+  }
+}
+
+@media (min-width: 782px) {
+  .booking-wrapper {
+    padding: 1rem;
+    margin-top: auto;
+    align-items: center;
+  }
+
+  .booking-container {
+    min-width: 150px;
+    height: 120px;
+    margin: auto;
+  }
+
+  .booking-section {
+    gap: 0.75rem;
+  }
+
+  .booking-cards {
+    gap: 0.2rem;
+  }
+
+  .booking-card {
+    flex: 1 1 calc(33.333% - 0.2rem);
+    min-width: 80px;
+    padding: 0.5rem;
+  }
+
+  .card-header {
+    margin-bottom: 0.4rem;
+  }
+
+  .card-content select,
+  .card-content input {
+    padding: 0.3rem;
+  }
+}
+
+@media (min-width: 320px) {
+  .booking-container {
+    width: 100% !important;
+    min-width: 10%;
+    margin: auto;
+    height: auto;
+    padding: 0.5rem;
+  }
+  .booking-card {
+    min-width: 0;
+    padding: 0.3rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .booking-wrapper {
+    padding: 1rem;
+    margin-top: auto;
+    align-items: center;
+  }
+
+  .booking-container {
+    width: 700px;
+    height: 120px;
+    margin: auto;
+  }
+
+  .booking-section {
+    gap: 0.75rem;
+  }
+
+  .booking-cards {
+    gap: 0.4rem;
+  }
+
+  .booking-card {
+    flex: 1 1 calc(33.333% - 0.4rem);
+    min-width: 90px;
+    padding: 0.5rem;
+  }
+
+  .card-header {
+    margin-bottom: 0.4rem;
+  }
+
+  .card-content select,
+  .card-content input {
+    padding: 0.3rem;
+  }
+}
+
+
+@media (min-width: 1368px) {
+  .booking-wrapper {
+    max-width: 1600px;
+    padding: 4rem;
+  }
+  .booking-container {
+    max-width: 800px;
+    height: 200px;
+    font-size: 1.2rem;
+  }
+  .radio-label, .card-header h3 {
+    font-size: 1.3rem;
+  }
+  .card-content select, .card-content input {
+    font-size: 1.1rem;
+    padding: 0.6rem;
+  }
+  .switch-button {
+    width: 60px;
+    height: 60px;
+  }
+} 
