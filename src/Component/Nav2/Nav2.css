@@ -1,4 +1,3 @@
-/* General Navbar Styling */
 .navbar-wrapper {
   background-color: #fff;
   border-bottom: 1px solid #eaeaea;
@@ -9,9 +8,6 @@
   z-index: 1000;
 }
 
-body {
-  padding-top: 124px;
-}
 
 .navbar {
   display: flex;
@@ -456,7 +452,7 @@ body.dark-mode .filter-group select:focus {
     align-items: center;
     padding: 2rem;
     height: 124px;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: auto;
     gap: 3px;
   }

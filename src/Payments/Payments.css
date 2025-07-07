@@ -895,7 +895,7 @@ body.dark-mode .apply-now-button:hover {
   align-items: center;
   gap: 6px;
 }
-@media (min-width: 375px) {
+@media (max-width: 375px) {
   .rental-summary-container {
     margin-top: 40%;
   }
@@ -934,7 +934,7 @@ body.dark-mode .apply-now-button:hover {
   }
   .apply-now-button {
     color: #1a202c;
-    padding: 10px 10px;
+    padding: 8px 5px;
     font-size: 16px;
     font-weight: 600;
     line-height: 150%;
