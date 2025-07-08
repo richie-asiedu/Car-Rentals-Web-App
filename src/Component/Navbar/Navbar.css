@@ -201,9 +201,10 @@ body {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 815px) {
   body {
-    padding-top: 100px;
+    padding-top: 0 !important;
+    margin-top: 30% !important;
   }
 
   .navbar {
