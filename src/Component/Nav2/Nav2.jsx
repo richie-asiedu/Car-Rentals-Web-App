@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './Nav2.css';
 import { Link } from 'react-router-dom'
-import { FaHeart, FaBell, FaCog, FaBars, FaTimes } from 'react-icons/fa';
+import { FaHeart, FaBell, FaCog} from 'react-icons/fa';
 import filterIcon from '../../assets/Filter.png';
 import searchIcon from '../../assets/search-normal.png';
 
-const Nav2 = ({ toggleSidebar, isSidebarOpen }) => {
+const Nav2 = () => {
   const [showFilters, setShowFilters] = useState(false);
   const [filters, setFilters] = useState({
     priceRange: 'all',

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Nav2 from '../Component/Nav2/Nav2';
 import SideBar from '../Component/SideBar/SideBar';
 import PopularCars from '../Component/PopularCars/PopularCars';

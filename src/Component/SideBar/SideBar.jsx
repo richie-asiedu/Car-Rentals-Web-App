@@ -11,7 +11,6 @@ const SideBar = ({ isOpen, onClose }) => {
 
     return (
         <>
-            {/* Close button for mobile overlay */}
             {onClose && (
                 <button className="close-icon block lg:hidden absolute top-4 right-4 z-50 bg-gray-100 rounded-full p-2" onClick={onClose} aria-label="Close sidebar">
                     <FaTimes size={24} />

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import './Review.css';
 import avatar1 from '../assets/Profill (2).png';
 import avatar2 from '../assets/Profill (3).png';

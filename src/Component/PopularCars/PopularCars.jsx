@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import './PopularCars.css'
-import { FaGasPump, FaUsers, FaCog } from 'react-icons/fa'
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai'
 import Car from '../../assets/Car.png'
 import carImage from '../../assets/image 8.png'

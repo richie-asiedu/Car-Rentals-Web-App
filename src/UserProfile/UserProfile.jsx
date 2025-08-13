@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import './UserProfile.css';
 import Nav2 from "../Component/Nav2/Nav2"
-import { FaBars, FaTimes, FaMapMarkerAlt, FaCalendarAlt, FaExchangeAlt } from 'react-icons/fa';
+import { FaBars, FaTimes,} from 'react-icons/fa';
 import Home from '../assets/home.png';
 import CarRent from '../assets/car@4x.png';
 import Chart from '../assets/chart.png';
 import Wallet from '../assets/empty-wallet.png';
 import Msg from '../assets/message.png';
-import Vector from '../assets/vector.png';
+import Vector from '../assets/Vector.png';
 import Settings from '../assets/setting.png';
 import Info from '../assets/info-circle.png';
 import Briefcase from '../assets/briefcase.png';
@@ -115,18 +115,6 @@ const UserProfile = () => {
     });
   };
 
-  const handleRentalTypeChange = (type) => {
-    setRentalType(type);
-  };
-
-  const handleBooking = (e) => {
-    e.preventDefault();
-    alert(
-      `Booking Details:\n\n` +
-      `Pick-up: ${pickupLocation}, ${pickupDate}, ${pickupTime}\n` +
-      `Drop-off: ${dropoffLocation}, ${dropoffDate}, ${dropoffTime}`
-    );
-  };
 
   return (
     <>
@@ -175,7 +163,7 @@ const UserProfile = () => {
                         left: '8px',
                         top: '50%',
                         transform: 'translateY(-50%)',
-                        color: isDarkMode ? '#a0aec0' : 'white', /* Dim in dark mode, bright in light mode */
+                        color: isDarkMode ? '#a0aec0' : 'white', 
                         transition: 'color 0.3s ease'
                       }}
                     />
@@ -186,7 +174,7 @@ const UserProfile = () => {
                         right: '8px',
                         top: '50%',
                         transform: 'translateY(-50%)',
-                        color: isDarkMode ? 'white' : '#a0aec0', /* Bright in dark mode, dim in light mode */
+                        color: isDarkMode ? 'white' : '#a0aec0', 
                         transition: 'color 0.3s ease'
                       }}
                     />
